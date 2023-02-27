@@ -1,0 +1,13 @@
+version: "3.4"
+
+services:
+  website_maker:
+    build:
+      context: ./docker
+      dockerfile: dockerfile
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www:cached
+    tty: true
+    ports:
+      - 3000:3000
